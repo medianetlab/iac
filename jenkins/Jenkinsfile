@@ -15,6 +15,7 @@ pipeline {
                 sh 'bash bin/validate.sh'
             }
         }
+
         // ****************************
         // *** Plan Terraform files ***
         // ****************************
@@ -22,6 +23,19 @@ pipeline {
             steps{
                 echo "**** Planning ****"
                 sh 'bash bin/plan.sh'
+            }
+        }
+
+        // *****************************
+        // *** Apply Terraform files ***
+        // *****************************
+        stage("Terraform Apply") {
+            when {
+                branch "master"
+            }
+            steps{
+                echo "**** Apply ****"
+                sh 'bash bin/apply.sh'
             }
         }
     }
