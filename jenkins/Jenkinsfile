@@ -9,7 +9,7 @@ pipeline {
         // ********************************
         // *** Validate Terraform files ***
         // ********************************
-        stage("build_test_images") {
+        stage("Terraform Validate") {
             steps{
                 echo "**** Validating ****"
                 sh 'bash bin/validate.sh'
@@ -18,7 +18,7 @@ pipeline {
         // ****************************
         // *** Plan Terraform files ***
         // ****************************
-        stage("build_test_images") {
+        stage("Terraform Plan") {
             steps{
                 echo "**** Planning ****"
                 sh 'bash bin/plan.sh'
@@ -26,6 +26,6 @@ pipeline {
         }
     }
 
-    post{
-    }
+    // post{
+    // }
 }
