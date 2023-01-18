@@ -1,4 +1,9 @@
 # Terraform provider variables
+# variable "backend" {
+#   type = string
+# }
+
+# Deployment variables 
 variable "network" {
   type    = string
   default = "services"

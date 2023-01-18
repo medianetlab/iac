@@ -7,6 +7,9 @@ terraform {
       version = "~> 1.48.0"
     }
   }
+  backend "local" {
+    path = ""
+  }
 }
 
 # Terraform provider variables
