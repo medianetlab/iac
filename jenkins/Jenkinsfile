@@ -1,0 +1,31 @@
+pipeline {
+    agent {
+        node {
+            label "terraform"
+        }
+    }
+
+    stages {
+        // ********************************
+        // *** Validate Terraform files ***
+        // ********************************
+        stage("build_test_images") {
+            steps{
+                echo "**** Validating ****"
+                sh 'bash bin/validate.sh'
+            }
+        }
+        // ****************************
+        // *** Plan Terraform files ***
+        // ****************************
+        stage("build_test_images") {
+            steps{
+                echo "**** Planning ****"
+                sh 'bash bin/plan.sh'
+            }
+        }
+    }
+
+    post{
+    }
+}
