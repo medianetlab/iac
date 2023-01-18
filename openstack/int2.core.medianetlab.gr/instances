@@ -1,0 +1,50 @@
+# ********************
+# *** INSTRUCTIONS ***
+# ********************
+#
+# *** STEP 1: Define the tenant name ***
+# Set the "tenant_name" variable to match the OpenStack tenant (project) that your instances are/will be deployed on.
+#
+# *** STEP 2: Update the instances variable ***
+# Update the "instances" variable to create/delete the instances that you want
+# To add an instance, add the new instance details in the instances variable mapping. You can find more details for the required fields of each instance below.
+# To delete an instance, remove the existing instance details from "instances" variable mapping.
+
+# *** STEP 1: Define the tenant name ***
+# This variable must be updated every time to match the OpenStack tenant (project) that your instances are/will be deployed on
+# Example:
+# tenant_name = "admin"
+
+# *** STEP 2: Update the instances variable ***
+# To add an instance, add the new instance details in the instances variable mapping. The format must be similar to the example below.
+# To delete an instance, remove the existing instance details from "instances" variable mapping.
+# instances = {
+#     "<INSTANCE_NAME>" = { --> A unique management name for your instance
+#       "vm_name"    = "<VM_NAME>" --> The VM name that will be used in OpenStack
+#       "image_name" = "<IMAGE_NAME>" --> The image name that will be used for creating the VM
+#       "flavor"     = "<FLAVOR_NAME>" --> The flavor name that will be used for creating the VM
+#       "networks" = { --> A list with the networks that will be attached to the VM
+#         "<NETWORK_NAME>" = { "ip_address" = "<A.B.C.D>" } --> The network name and a static IPv4 do be assigned to the VM, in A.B.C.D format. Leave an empty string in case you want the IP address assigned through DHCP.
+#         "<NETWORK_NAME>"  = { "ip_address" = "" }
+#       }
+#     }
+# }
+# 
+# Example: 
+# instances = {
+#     "instance2" = {
+#       "vm_name"    = "themaros"
+#       "image_name" = "ubuntu20.04"
+#       "flavor"     = "5gproxy-flv"
+#       "networks" = {
+#         "services" = { "ip_address" = "" }
+#         "vnf_net"  = { "ip_address" = "" }
+#       }
+#     }
+# }
+
+tenant_name = "admin"
+
+instances = {
+
+}
