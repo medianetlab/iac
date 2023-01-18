@@ -46,5 +46,12 @@
 tenant_name = "admin"
 
 instances = {
-
+    "themisTestVM" = {
+       "vm_name"    = "testingVM"
+       "image_name" = "ubuntu20.04"
+       "flavor"     = "5gproxy-flv"
+       "networks" = {
+         "services" = { "ip_address" = "" }
+       }
+     }
 }
