@@ -16,7 +16,7 @@
 # tenant_name = "admin"
 
 # *** STEP 2: Update the instances variable ***
-# To add an instance, add the new instance details in the instances variable mapping. The format must be similar to the example below.
+# To add an instance, add the new instance details in the "instances" variable mapping. The format must be similar to the example below.
 # To delete an instance, remove the existing instance details from "instances" variable mapping.
 # instances = {
 #     "<INSTANCE_NAME>" = { --> A unique management name for your instance
@@ -33,11 +33,11 @@
 # Example: 
 # instances = {
 #     "instance2" = {
-#       "vm_name"    = "themaros"
+#       "vm_name"    = "testingVM"
 #       "image_name" = "ubuntu20.04"
 #       "flavor"     = "5gproxy-flv"
 #       "networks" = {
-#         "services" = { "ip_address" = "" }
+#         "services" = { "ip_address" = "10.161.3.101" }
 #         "vnf_net"  = { "ip_address" = "" }
 #       }
 #     }

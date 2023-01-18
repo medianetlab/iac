@@ -33,11 +33,11 @@
 # Example: 
 # instances = {
 #     "instance2" = {
-#       "vm_name"    = "themaros"
+#       "vm_name"    = "testingVM"
 #       "image_name" = "ubuntu20.04"
 #       "flavor"     = "5gproxy-flv"
 #       "networks" = {
-#         "services" = { "ip_address" = "" }
+#         "services" = { "ip_address" = "10.161.3.101" }
 #         "vnf_net"  = { "ip_address" = "" }
 #       }
 #     }
