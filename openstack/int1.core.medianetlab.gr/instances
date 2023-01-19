@@ -48,7 +48,7 @@ tenant_name = "palantir"
 instances = {
   "testVM1" = {
     "vm_name"    = "testingVM1"
-    "image_name" = "ubuntu20.04"
+    "image_name" = "ubuntu20.4"
     "flavor"     = "m1.small"
     "networks" = {
       "services" = { "ip_address" = "10.161.1.56" }
@@ -57,7 +57,7 @@ instances = {
   }
   "testVM2" = {
     "vm_name"    = "testingVM2"
-    "image_name" = "ubuntu20.04"
+    "image_name" = "ubuntu20.4"
     "flavor"     = "m1.small"
     "networks" = {
       "services" = { "ip_address" = "10.161.1.57" }
