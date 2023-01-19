@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 for i in $(ls openstack);
 do
     echo "*** Validating cloud: ${i} ***"
