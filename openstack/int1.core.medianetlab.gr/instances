@@ -52,7 +52,6 @@ instances = {
     "flavor"     = "m1.small"
     "networks" = {
       "services" = { "ip_address" = "10.161.1.56" }
-      "vnf_net"  = { "ip_address" = "" }
     }
   }
   "testVM2" = {
@@ -61,7 +60,6 @@ instances = {
     "flavor"     = "m1.small"
     "networks" = {
       "services" = { "ip_address" = "10.161.1.57" }
-      "vnf_net"  = { "ip_address" = "" }
     }
   }
 }
