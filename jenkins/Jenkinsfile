@@ -43,7 +43,7 @@ pipeline {
     post {
         success {
             script {
-                if (env.BRANCH_NAME == "master") {
+                if (env.BRANCH_NAME == "master-rc") {
                     withCredentials([string(credentialsId: 'themisAnagno_github_token', variable: 'TOKEN')]) {
                         sh '''
                         git status
