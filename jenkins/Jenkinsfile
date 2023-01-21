@@ -48,7 +48,7 @@ pipeline {
                         sh '''
                         git status
                         git checkout -b master
-                        git merge staging
+                        git merge origin/staging
                         git push origin master
                         '''
                     }
