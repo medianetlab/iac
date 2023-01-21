@@ -57,7 +57,7 @@ pipeline {
                         git status
                         git checkout master
                         git merge origin/staging
-                        git push "https://themisAnagno:${TOKEN}/github.com/${GIT_ORG}/${GIT_REPO}"
+                        git push "https://themisAnagno:${TOKEN}@github.com/${GIT_ORG}/${GIT_REPO}"
                         '''
                     }
                 }
