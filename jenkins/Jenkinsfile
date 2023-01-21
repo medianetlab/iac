@@ -31,7 +31,7 @@ pipeline {
         // *****************************
         stage("Terraform Apply") {
             when {
-                branch "master-rc"
+                branch "staging"
             }
             steps{
                 echo "**** Apply ****"
@@ -43,12 +43,12 @@ pipeline {
     post {
         success {
             script {
-                if (env.BRANCH_NAME == "master-rc") {
+                if (env.BRANCH_NAME == "staging") {
                     withCredentials([string(credentialsId: 'themisAnagno_github_token', variable: 'TOKEN')]) {
                         sh '''
                         git status
                         git checkout master
-                        git merge master-rc
+                        git merge staging
                         git push origin master
                         '''
                     }
