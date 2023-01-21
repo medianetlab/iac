@@ -46,7 +46,10 @@ pipeline {
                 if (env.BRANCH_NAME == "master") {
                     withCredentials([string(credentialsId: 'themisAnagno_github_token', variable: 'TOKEN')]) {
                         sh '''
-                        echo "I HAVE TOKEN"
+                        git status
+                        git chechout master
+                        git merge master-rc
+                        git push origin master
                         '''
                     }
                 }
