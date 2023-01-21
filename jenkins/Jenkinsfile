@@ -31,7 +31,7 @@ pipeline {
         // *****************************
         stage("Terraform Apply") {
             when {
-                branch "master"
+                branch "master-rc"
             }
             steps{
                 echo "**** Apply ****"
@@ -40,6 +40,15 @@ pipeline {
         }
     }
 
-    // post{
-    // }
+    post {
+        success {
+            script {
+                if (env.BRANCH_NAME == "master") {
+                    sh """
+                    echo "This is a successfull pipeline"
+                    """
+                }
+            }
+        }
+    }
 }
