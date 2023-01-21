@@ -47,7 +47,7 @@ pipeline {
                     withCredentials([string(credentialsId: 'themisAnagno_github_token', variable: 'TOKEN')]) {
                         sh '''
                         git status
-                        git chechout master
+                        git checkout master
                         git merge master-rc
                         git push origin master
                         '''
