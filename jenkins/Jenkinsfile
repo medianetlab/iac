@@ -53,8 +53,6 @@ pipeline {
                         echo $REMOTE_URL
                         export GIT_ORG="$(echo $REMOTE_URL | cut -f4 -d'/')"
                         export GIT_REPO="$(echo $REMOTE_URL | cut -f5 -d'/')"
-                        echo "${GIT_ORG}/${GIT_REPO}"
-                        git status
                         git checkout master
                         git merge origin/staging
                         git push "https://themisAnagno:${TOKEN}@github.com/${GIT_ORG}/${GIT_REPO}"
