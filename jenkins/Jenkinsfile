@@ -5,6 +5,10 @@ pipeline {
         }
     }
 
+    environment {
+        REMOTE_URL="${env.GIT_URL}" 
+    }
+
     stages {
         // ********************************
         // *** Validate Terraform files ***
@@ -46,7 +50,7 @@ pipeline {
                 if (env.BRANCH_NAME == "staging") {
                     withCredentials([string(credentialsId: 'themisAnagno_github_token', variable: 'TOKEN')]) {
                         sh '''
-                        echo "${env.GIT_URL}"
+                        echo $REMOTE_URL
                         # git status
                         # git checkout master
                         # git merge origin/staging
