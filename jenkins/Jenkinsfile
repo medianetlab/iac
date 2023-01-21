@@ -44,9 +44,11 @@ pipeline {
         success {
             script {
                 if (env.BRANCH_NAME == "master") {
-                    sh """
-                    echo "This is a successfull pipeline"
-                    """
+                    withCredentials([string(credentialsId: 'themisAnagno_github_token', variable: 'TOKEN')]) {
+                        sh '''
+                        echo "I HAVE TOKEN"
+                        '''
+                    }
                 }
             }
         }
