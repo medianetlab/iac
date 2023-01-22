@@ -3,6 +3,10 @@
 #   type = string
 # }
 
+variable "mnlab_generic_key" {
+  type = string
+}
+
 # Deployment variables 
 variable "network" {
   type    = string
