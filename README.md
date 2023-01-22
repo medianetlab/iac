@@ -7,11 +7,21 @@ Use the IaC repository to manage virtual resources on the MNL cloud infrastructu
 Follow the steps below to interact with the IaC services:
 
 * Create a new branch with your name.
-* Update the necessary configuration files and commit the changes to your branch. This will trigger a Jenkins pipeline that will verify that the specified changes can be implemented.
-* If the Jenkins pipelines finish successfully, create a new pull request to the master branch. Add a detailed description to the pull requess, highlighting the purpose of the infrastructure updates. An MNL admin will review the pull request and approve the merge into the master branch.
+* Update the necessary configuration files and commit the changes to your branch. This will trigger a Jenkins pipeline on your branch that will verify that the specified changes can be implemented:
+
+![Local Branch Pipeline](./images/BranchCheckStatus.png)
+
+* If the Jenkins pipelines finish successfully, create a new pull request to the **staging** branch. Add a detailed description to the pull requess, highlighting the purpose of the infrastructure updates:
+
+![Pull Request](./images/GitHubPullRequest.png)
+
+An MNL admin will review the pull request and approve the merge into the master branch:
+
+![Pull Request Checks](./images/PRCheckStatus.png)
+
 * Merging it into the master branch will trigger the actual IaC services that will implement the specified changes.
 
-Once the master pipeline finishes, you will be notified via email for the expected infrastructure updates.
+Once the master pipeline finishes, you will be notified for the expected infrastructure updates.
 
 ## Instructions: Create/Update/Delete Openstack VMs
 
