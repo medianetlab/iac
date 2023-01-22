@@ -6,12 +6,43 @@ Use the IaC repository to manage virtual resources on the MNL cloud infrastructu
 
 Follow the steps below to interact with the IaC services:
 
-* Create a new branch with your name.
-* Update the necessary configuration files and commit the changes to your branch. This will trigger a Jenkins pipeline on your branch that will verify that the specified changes can be implemented:
+### 1. Clone the IaC repo and create a new branch
+
+Clone the IaC repository locally to your system:
+
+```bash
+git clone https://github.com/medianetlab/iac.git
+cd iac
+```
+
+Create a new branch with your name:
+
+```bash
+git checkout -b <YOYR_NAME>
+```
+
+If you already have a branch created, merge the master branch into your branch to get the latest updates: 
+
+```bash
+git checkout <YOYR_NAME>
+git merge master
+```
+
+### 2. Update the configuration files
+
+Update the necessary configuration files and commit the changes to your branch. Then push the new commits to your branch on the remote repository. 
+
+```bash
+git push origin <YOUR_NAME>
+```
+
+This will trigger a Jenkins pipeline on your branch that will verify that the specified changes can be implemented:
 
 ![Local Branch Pipeline](./images/BranchCheckStatus.png)
 
-* If the Jenkins pipelines finish successfully, create a new pull request to the **staging** branch. Add a detailed description to the pull requess, highlighting the purpose of the infrastructure updates:
+### 3. Create a Pull Request to the staging branch
+
+If the Jenkins pipelines finish successfully, create a new pull request to the **staging** branch. Add a detailed description to the pull requess, highlighting the purpose of the infrastructure updates:
 
 ![Pull Request](./images/GitHubPullRequest.png)
 
@@ -19,7 +50,7 @@ An MNL admin will review the pull request and approve the merge into the master 
 
 ![Pull Request Checks](./images/PRCheckStatus.png)
 
-* Merging it into the master branch will trigger the actual IaC services that will implement the specified changes.
+ Merging it into the master branch will trigger the actual IaC services that will implement the specified changes.
 
 Once the master pipeline finishes, you will be notified for the expected infrastructure updates.
 
