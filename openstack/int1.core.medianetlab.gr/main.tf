@@ -1,3 +1,8 @@
+resource "openstack_compute_keypair_v2" "mnlab_generic_key" {
+  name       = "mnlab_generic_key"
+  public_key = var.mnlab_generic_key
+}
+
 resource "openstack_compute_instance_v2" "newVM" {
 
   # Dynamically create the instances

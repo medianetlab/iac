@@ -1,4 +1,9 @@
 # Terraform provider variables
+
+variable "mnlab_generic_key" {
+  type = string
+}
+
 variable "network" {
   type    = string
   default = "services"
