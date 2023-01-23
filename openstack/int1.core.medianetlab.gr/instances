@@ -48,8 +48,8 @@ tenant_name = "palantir"
 instances = {
   "instance2" = {
     "vm_name"    = "testingVM"
-    "image_name" = "ubuntu20.04"
-    "flavor"     = "5gproxy-flv"
+    "image_name" = "ubuntu20.4"
+    "flavor"     = "m1.small"
     "networks" = {
       "services" = { "ip_address" = "" }
     }
