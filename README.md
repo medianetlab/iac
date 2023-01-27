@@ -33,6 +33,8 @@ git merge master
 Update the necessary configuration files and commit the changes to your branch. Then push the new commits to your branch on the remote repository. 
 
 ```bash
+git add .
+git commit -m <COMMIT MESSAGE>
 git push origin <YOUR_NAME>
 ```
 
